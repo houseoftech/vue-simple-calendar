@@ -30,8 +30,8 @@
 					<span class="monthName">{{ monthNames[displayDate.getMonth()] }}</span>
 					<span class="yearNumber">{{ displayDate.getFullYear() }}</span>
 				</div>
-				<div v-if="!isSameMonth(today, displayDate)" class="currentMonth"><button @click="onClickCurrentMonth"></button></div>
 			</div>
+			<div class="currentMonth"><button @click="onClickCurrentMonth"></button></div>
 			<div class="nextMonth"><button @click="onClickNextMonth" :disabled="!allowNextMonthClick"></button></div>
 			<div class="nextYear"><button @click="onClickNextYear" :disabled="!allowNextYearClick"></button></div>
 		</div>

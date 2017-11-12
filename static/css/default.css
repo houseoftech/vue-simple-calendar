@@ -61,5 +61,8 @@ having to override as much.
 	.default.calendar-month .header .nextMonth button::after { content: "\25B6"; }
 	.default.calendar-month .header .previousYear button::after { content: "\25C0\25C0"; }
 	.default.calendar-month .header .nextYear button::after { content: "\25B6\25B6"; }
+	.default.calendar-month .header .currentMonth { display: none; }
+	.default.calendar-month.past .header .currentMonth,
+	.default.calendar-month.future .header .currentMonth { display: block; }
 	.default.calendar-month.past .header .currentMonth button::after { content: '\21BA'; }
 	.default.calendar-month.future .header .currentMonth button::after { content: '\21BB'; }
