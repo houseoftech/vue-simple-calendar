@@ -55,6 +55,10 @@ export default {
 					name: 'Default',
 					class: 'default',
 				},
+				macOSCalendar: {
+					name: 'macOS Calendar App',
+					class: 'macos-calendar',
+				},
 			},
 			message: 'Click a date or event...',
 			alreadyAdded: false,
