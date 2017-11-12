@@ -73,7 +73,7 @@
 					class="event"
 					:key="e.id"
 					:draggable="enableDragDrop"
-					:class="e.classes"
+					:class="[e.classes, {'active': isSelectedEvent(e.details.id)}]"
 					:title="e.details.title"
 					@dragstart="onDragStart(e, $event)"
 					@click.stop="onClickEvent(e)"
@@ -111,6 +111,12 @@ export default {
 
 	},
 
+	data() {
+		return {
+			selectedEvent: null,
+		};
+	},
+
 	computed: {
 
 		/* Props cannot default to computed/method returns, so create defaulted versions of the properties that need specific defaults (Vue Issue #6013) */
@@ -135,12 +141,18 @@ export default {
 		// ******************************
 
 		onClickDay(day) {
+			this.selectedEvent = null;
 			if (this.disablePast && this.isInPast(day)) return;
 			this.$emit('clickDay', day);
 		},
 
 		onClickEvent(e, day) {
+			this.selectedEvent = e.details.id;
 			this.$emit('clickEvent', e.details, day);
+		},
+
+		isSelectedEvent(id) {
+			return id === this.selectedEvent;
 		},
 
 		onClickPreviousYear() { this.$emit('setShowDate', this.aYearBefore(this.displayDate)); },
