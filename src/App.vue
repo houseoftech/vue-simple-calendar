@@ -63,7 +63,7 @@ export default {
 			message: 'Click a date or event...',
 			alreadyAdded: false,
 			events: [
-				{ id: 'e1', startDate: this.thisMonth(15), endDate: this.thisMonth(15), title: 'Single-day event with a long title' },
+				{ id: 'e1', startDate: this.thisMonth(7), endDate: this.thisMonth(7), title: 'Single-day event with a long title' },
 				{ id: 'e2', startDate: this.thisMonth(7), endDate: this.thisMonth(10), title: 'Multi-day event with a long title' },
 				{ id: 'e3', startDate: this.thisMonth(20), endDate: this.thisMonth(20), title: 'My Birthday!', classes: 'birthday', url: 'https://en.wikipedia.org/wiki/Birthday' },
 				{ id: 'e4', startDate: this.thisMonth(5), endDate: this.thisMonth(12), title: 'Multi-day event', classes: 'purple' },
@@ -74,6 +74,8 @@ export default {
 				{ id: 'e9', startDate: this.thisMonth(29), endDate: this.thisMonth(29), title: 'Same day 5' },
 				{ id: 'e10', startDate: this.thisMonth(29), endDate: this.thisMonth(29), title: 'Same day 6', classes: 'orange' },
 				{ id: 'e11', startDate: this.thisMonth(29), endDate: this.thisMonth(29), title: 'Same day 7' },
+				{ id: 'e12', startDate: this.thisMonth(19), endDate: this.thisMonth(25), title: 'All Week Long' },
+				{ id: 'e13', startDate: this.thisMonth(1), endDate: this.thisMonth(16), title: 'Spanning Multiple Weeks' },
 			],
 		};
 	},
@@ -133,11 +135,11 @@ export default {
 	*/
 
 	/* Add some emoji for Canada and France... */
-	.calendar .d07-01 .date::before { content: '\1F1E8\1F1E6'; margin-right: 0.5em; }
-	.calendar .d07-14 .date::before { content: '\1F1EB\1F1F7'; margin-right: 0.5em; }
+	.calendar-month .d07-01 .date::before { content: '\1F1E8\1F1E6'; margin-right: 0.5em; }
+	.calendar-month .d07-14 .date::before { content: '\1F1EB\1F1F7'; margin-right: 0.5em; }
 
 	/* Add some styling for events tagged with the "birthday" class */
-	.calendar .event.birthday { background-color: #e0f0e0; border-color: #d7e7d7; }
-	.calendar .event.birthday::before { content: '\1F382'; margin-right: 0.5em; }
+	.calendar-month .event.birthday { background-color: #e0f0e0; border-color: #d7e7d7; }
+	.calendar-month .event.birthday::before { content: '\1F382'; margin-right: 0.5em; }
 
 </style>
