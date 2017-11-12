@@ -9,6 +9,13 @@
 			<p>Note that this demo page has some examples of custom styles -- the holiday icons. As you can see from the source,
 				it's easy to customize the style to meet your needs. I've purposefully tried to choose defaults that are modern
 				and clean without getting so complicated that they would be difficult to override.</p>
+			
+			<p>
+				<label for="themePicker">Pick a theme</label>
+				<select v-model="theme">
+					<option v-for="(theme, key) in themes" :value="key">{{ theme.name }}</option>
+				</select>
+			</p>
 
 			<h3>{{message}}</h3>
 
@@ -16,7 +23,7 @@
 		</div>
 		
 		<calendar-month
-			class="holiday-us-traditional holiday-us-official"
+			:class="['holiday-us-traditional holiday-us-official', themes[theme].class]"
 			:show-date="showDate"
 			@clickDay="onClickDay"
 			@clickEvent="onClickEvent"
@@ -42,6 +49,13 @@ export default {
 		return {
 			/* Show the current month, and give it some fake events to show */
 			showDate: this.thisMonth(1),
+			theme: 'default',
+			themes: {
+				default: {
+					name: 'Default',
+					class: 'default',
+				},
+			},
 			message: 'Click a date or event...',
 			alreadyAdded: false,
 			events: [
