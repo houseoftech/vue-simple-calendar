@@ -140,11 +140,14 @@ Styled after the Calendar App in macOS.
 		font-size: 0.8em;
 		line-height: 0.8em;
 	}
+	.event.continued {
+		padding-left: 1.2em;
+	}
 	.event.span1:not(.toBeContinued) {
 		background-color: transparent;
 		padding-left: 1.2em;
 	}
-	.event.span1:not(.toBeContinued):before {
+	.event.span1:not(.continued):not(.toBeContinued):before {
 		content: "\2219";
 		font-size: 1.3em;
 		color: rgb(42, 174, 245);
@@ -159,14 +162,14 @@ Styled after the Calendar App in macOS.
 	.event.purple.continued {
 		background-color: rgba(203, 119, 223, 0.3);
 	}
-	.event.purple.span1:before {
+	.event.purple.span1:not(.existing):before {
 		color: rgb(203, 119, 223);
 	}
 	.event.orange:not(.span1),
 	.event.orange.continued {
 		background-color: rgba(247, 197, 78, 0.3);
 	}
-	.event.orange.span1:before {
+	.event.orange.span1:not(.existing):before {
 		color: rgb(247, 197, 78);
 	}
 	.event.continued::before,
@@ -174,11 +177,12 @@ Styled after the Calendar App in macOS.
 		content: "";
 	}
 	/* Selected event colors */
-	.event.active {
+	.event.active,
+	.event.span1.active {
 		color: #fff;
 		background-color: rgba(42, 174, 245, 1);
 	}
-	.event.active.span1:before {
+	.event.active.span1:not(.existing):before {
 		color: #fff;
 	}
 	.event.purple.active {
