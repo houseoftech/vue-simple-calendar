@@ -6,6 +6,21 @@ Styled after the Calendar App in macOS.
 **************************************************************
 */
 
+/* Variables */
+$dayBackgroundColor: rgb(255, 255, 255);
+$eventColor: rgb(42, 174, 245);
+$purpleEventColor: rgb(203, 119, 223);
+$orangeEventColor: rgb(247, 197, 78);
+$eventBackgroundOpacity: 30%;
+
+$eventMargin: 0.4em;
+
+$eventBgColor: mix($eventColor, $dayBackgroundColor, $eventBackgroundOpacity);
+$purpleEventBgColor: mix($purpleEventColor, $dayBackgroundColor, $eventBackgroundOpacity);
+$orangeEventBgColor: mix($orangeEventColor, $dayBackgroundColor, $eventBackgroundOpacity);
+
+
+/* Styles */
 .macos-calendar.calendar-month {
 
 	/* Font */
@@ -132,7 +147,7 @@ Styled after the Calendar App in macOS.
 
 	/* Events */
 	div[class*=" span"] {
-		background-color: rgba(42, 174, 245, 0.3);
+		background-color: $eventBgColor;
 		text-align: left;
 		border: 0;
 		border-radius: 0;
@@ -150,7 +165,7 @@ Styled after the Calendar App in macOS.
 	.event.span1:not(.continued):not(.toBeContinued):before {
 		content: "\2219";
 		font-size: 1.3em;
-		color: rgb(42, 174, 245);
+		color: $eventColor;
 		vertical-align: middle;
 		display: block;
 		position: absolute;
@@ -160,17 +175,17 @@ Styled after the Calendar App in macOS.
 	/* Event Colors */
 	.event.purple:not(.span1),
 	.event.purple.continued {
-		background-color: rgba(203, 119, 223, 0.3);
+		background-color: $purpleEventBgColor;
 	}
 	.event.purple.span1:not(.existing):before {
-		color: rgb(203, 119, 223);
+		color: $purpleEventColor;
 	}
 	.event.orange:not(.span1),
 	.event.orange.continued {
-		background-color: rgba(247, 197, 78, 0.3);
+		background-color: $orangeEventBgColor;
 	}
 	.event.orange.span1:not(.existing):before {
-		color: rgb(247, 197, 78);
+		color: $orangeEventColor;
 	}
 	.event.continued::before,
 	.event.toBeContinued::after { 
@@ -180,16 +195,16 @@ Styled after the Calendar App in macOS.
 	.event.active,
 	.event.span1.active {
 		color: #fff;
-		background-color: rgba(42, 174, 245, 1);
+		background-color: $eventColor;
 	}
 	.event.active.span1:not(.existing):before {
 		color: #fff;
 	}
 	.event.purple.active {
-		background-color: rgba(203, 119, 223, 1);
+		background-color: $purpleEventColor;
 	}
 	.event.orange.active {
-		background-color: rgba(247, 197, 78, 1);
+		background-color: $orangeEventColor;
 	}
 	/* Event positioning */
 	.event.slot1 { top: 2.5em; }
@@ -203,13 +218,13 @@ Styled after the Calendar App in macOS.
 	.event.slot9 { top: calc(8 * 1.4em + 2.5em); }
 	.event.slot10 { top: calc(9 * 1.4em + 2.5em); }
 
-	.event.offset0 { left: calc(.4em); }
-	.event.offset1 { left: calc((100% / 7) + .4em); }
-	.event.offset2 { left: calc((200% / 7) + .4em); }
-	.event.offset3 { left: calc((300% / 7) + .4em); }
-	.event.offset4 { left: calc((400% / 7) + .4em); }
-	.event.offset5 { left: calc((500% / 7) + .4em); }
-	.event.offset6 { left: calc((600% / 7) + .4em); }
+	.event.offset0 { left: $eventMargin; }
+	.event.offset1 { left: calc((100% / 7) + #{$eventMargin}); }
+	.event.offset2 { left: calc((200% / 7) + #{$eventMargin}); }
+	.event.offset3 { left: calc((300% / 7) + #{$eventMargin}); }
+	.event.offset4 { left: calc((400% / 7) + #{$eventMargin}); }
+	.event.offset5 { left: calc((500% / 7) + #{$eventMargin}); }
+	.event.offset6 { left: calc((600% / 7) + #{$eventMargin}); }
 	.event.offset0.span1:not(.toBeContinued) { left: calc(0em); }
 	.event.offset1.span1:not(.toBeContinued) { left: calc((100% / 7)); }
 	.event.offset2.span1:not(.toBeContinued) { left: calc((200% / 7)); }
@@ -228,27 +243,27 @@ Styled after the Calendar App in macOS.
 
 	/* Metrics for events spanning dates */
 	.event.span1 { width: calc((100% / 7)); }
-	.event.span2 { width: calc((200% / 7) - .8em); }
-	.event.span3 { width: calc((300% / 7) - .8em); }
-	.event.span4 { width: calc((400% / 7) - .8em); }
-	.event.span5 { width: calc((500% / 7) - .8em); }
-	.event.span6 { width: calc((600% / 7) - .8em); }
-	.event.span7 { width: calc((700% / 7) - .8em); }
+	.event.span2 { width: calc((200% / 7) - (#{$eventMargin} * 2)); }
+	.event.span3 { width: calc((300% / 7) - (#{$eventMargin} * 2)); }
+	.event.span4 { width: calc((400% / 7) - (#{$eventMargin} * 2)); }
+	.event.span5 { width: calc((500% / 7) - (#{$eventMargin} * 2)); }
+	.event.span6 { width: calc((600% / 7) - (#{$eventMargin} * 2)); }
+	.event.span7 { width: calc((700% / 7) - (#{$eventMargin} * 2)); }
 
 	.event.span1.continued,
-	.event.span1.toBeContinued { width: calc((100% / 7) - .4em); }
+	.event.span1.toBeContinued { width: calc((100% / 7) - #{$eventMargin}); }
 	.event.span2.continued,
-	.event.span2.toBeContinued { width: calc((200% / 7) - .4em); }
+	.event.span2.toBeContinued { width: calc((200% / 7) - #{$eventMargin}); }
 	.event.span3.continued,
-	.event.span3.toBeContinued { width: calc((300% / 7) - .4em); }
+	.event.span3.toBeContinued { width: calc((300% / 7) - #{$eventMargin}); }
 	.event.span4.continued,
-	.event.span4.toBeContinued { width: calc((400% / 7) - .4em); }
+	.event.span4.toBeContinued { width: calc((400% / 7) - #{$eventMargin}); }
 	.event.span5.continued,
-	.event.span5.toBeContinued { width: calc((500% / 7) - .4em); }
+	.event.span5.toBeContinued { width: calc((500% / 7) - #{$eventMargin}); }
 	.event.span6.continued,
-	.event.span6.toBeContinued { width: calc((600% / 7) - .4em); }
+	.event.span6.toBeContinued { width: calc((600% / 7) - #{$eventMargin}); }
 	.event.span7.continued,
-	.event.span7.toBeContinued { width: calc((700% / 7) - .4em); }
+	.event.span7.toBeContinued { width: calc((700% / 7) - #{$eventMargin}); }
 	.event.span1.continued.toBeContinued { width: calc((100% / 7)); }
 	.event.span2.continued.toBeContinued { width: calc((200% / 7)); }
 	.event.span3.continued.toBeContinued { width: calc((300% / 7)); }
