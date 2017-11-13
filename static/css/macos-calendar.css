@@ -230,19 +230,19 @@ Styled after the Calendar App in macOS.
 .macos-calendar.calendar-month .event.span6 { width: calc((600% / 7) - .8em); }
 .macos-calendar.calendar-month .event.span7 { width: calc((700% / 7) - .8em); }
 
-.macos-calendar.calendar-month .event.span1.continued { width: calc((100% / 7) - .4em); }
-.macos-calendar.calendar-month .event.span2.continued { width: calc((200% / 7) - .4em); }
-.macos-calendar.calendar-month .event.span3.continued { width: calc((300% / 7) - .4em); }
-.macos-calendar.calendar-month .event.span4.continued { width: calc((400% / 7) - .4em); }
-.macos-calendar.calendar-month .event.span5.continued { width: calc((500% / 7) - .4em); }
-.macos-calendar.calendar-month .event.span6.continued { width: calc((600% / 7) - .4em); }
-.macos-calendar.calendar-month .event.span7.continued { width: calc((700% / 7) - .4em); }
+.macos-calendar.calendar-month .event.span1.continued,
 .macos-calendar.calendar-month .event.span1.toBeContinued { width: calc((100% / 7) - .4em); }
+.macos-calendar.calendar-month .event.span2.continued,
 .macos-calendar.calendar-month .event.span2.toBeContinued { width: calc((200% / 7) - .4em); }
+.macos-calendar.calendar-month .event.span3.continued,
 .macos-calendar.calendar-month .event.span3.toBeContinued { width: calc((300% / 7) - .4em); }
+.macos-calendar.calendar-month .event.span4.continued,
 .macos-calendar.calendar-month .event.span4.toBeContinued { width: calc((400% / 7) - .4em); }
+.macos-calendar.calendar-month .event.span5.continued,
 .macos-calendar.calendar-month .event.span5.toBeContinued { width: calc((500% / 7) - .4em); }
+.macos-calendar.calendar-month .event.span6.continued,
 .macos-calendar.calendar-month .event.span6.toBeContinued { width: calc((600% / 7) - .4em); }
+.macos-calendar.calendar-month .event.span7.continued,
 .macos-calendar.calendar-month .event.span7.toBeContinued { width: calc((700% / 7) - .4em); }
 .macos-calendar.calendar-month .event.span1.continued.toBeContinued { width: calc((100% / 7)); }
 .macos-calendar.calendar-month .event.span2.continued.toBeContinued { width: calc((200% / 7)); }
