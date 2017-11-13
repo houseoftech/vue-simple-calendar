@@ -103,7 +103,10 @@ export default {
 };
 </script>
 
-<style>
+<style lang="scss">
+@import 'sass/default';
+@import 'sass/macos-calendar';
+@import 'sass/holidays-us';
 
 	html, body {
 		height: 100%;
