@@ -139,11 +139,11 @@ Styled after the Calendar App in macOS.
 	font-size: 0.8em;
 	line-height: 0.8em;
 }
-.macos-calendar.calendar-month .event.span1 {
+.macos-calendar.calendar-month .event.span1:not(.toBeContinued) {
 	background-color: transparent;
 	padding-left: 1.2em;
 }
-.macos-calendar.calendar-month .event.span1:before {
+.macos-calendar.calendar-month .event.span1:not(.toBeContinued):before {
 	content: "\2219";
 	font-size: 1.3em;
 	color: rgb(42, 174, 245);
@@ -205,13 +205,13 @@ Styled after the Calendar App in macOS.
 .macos-calendar.calendar-month .event.offset4 { left: calc((400% / 7) + .4em); }
 .macos-calendar.calendar-month .event.offset5 { left: calc((500% / 7) + .4em); }
 .macos-calendar.calendar-month .event.offset6 { left: calc((600% / 7) + .4em); }
-.macos-calendar.calendar-month .event.offset0.span1 { left: calc(0em); }
-.macos-calendar.calendar-month .event.offset1.span1 { left: calc((100% / 7)); }
-.macos-calendar.calendar-month .event.offset2.span1 { left: calc((200% / 7)); }
-.macos-calendar.calendar-month .event.offset3.span1 { left: calc((300% / 7)); }
-.macos-calendar.calendar-month .event.offset4.span1 { left: calc((400% / 7)); }
-.macos-calendar.calendar-month .event.offset5.span1 { left: calc((500% / 7)); }
-.macos-calendar.calendar-month .event.offset6.span1 { left: calc((600% / 7)); }
+.macos-calendar.calendar-month .event.offset0.span1:not(.toBeContinued) { left: calc(0em); }
+.macos-calendar.calendar-month .event.offset1.span1:not(.toBeContinued) { left: calc((100% / 7)); }
+.macos-calendar.calendar-month .event.offset2.span1:not(.toBeContinued) { left: calc((200% / 7)); }
+.macos-calendar.calendar-month .event.offset3.span1:not(.toBeContinued) { left: calc((300% / 7)); }
+.macos-calendar.calendar-month .event.offset4.span1:not(.toBeContinued) { left: calc((400% / 7)); }
+.macos-calendar.calendar-month .event.offset5.span1:not(.toBeContinued) { left: calc((500% / 7)); }
+.macos-calendar.calendar-month .event.offset6.span1:not(.toBeContinued) { left: calc((600% / 7)); }
 
 .macos-calendar.calendar-month .event.offset0.continued { left: calc(0em); }
 .macos-calendar.calendar-month .event.offset1.continued { left: calc((100% / 7)); }
